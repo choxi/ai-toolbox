@@ -1,0 +1,3 @@
+class Repo < ApplicationRecord
+
+end
