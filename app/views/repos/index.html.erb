@@ -1,8 +1,9 @@
-<h1>Repos</h1>
-
-
-<ul>
-  <% @repos.each do |repo| %>
-    <li><%= repo.user %>/<%= repo.name %></li>
-  <% end %>
-</ul>
+<div class="container">
+  <div class="row">
+    <% @repos.each do |repo| %>
+      <div class="repo">
+        <h6><%= repo.user %>/<%= repo.name %></h6>
+      </div>
+    <% end %>
+  </div>
+</div>
