@@ -3,6 +3,21 @@
     <% @repos.each do |repo| %>
       <div class="repo">
         <h6><%= repo.user %>/<%= repo.name %></h6>
+        <p>Forks: <%= repo.forks_count %></p>
+        <p>Stargazers: <%= repo.stargazers_count %></p>
+        <p>Watchers: <%= repo.watchers_count %></p>
+        <p>Subscribers: <%= repo.subscribers_count %></p>
+        <p>Created: <%= time_ago_in_words(repo.github_created_at) %> ago</p>
+
+        <table class="commit_activity">
+          <% 7.times do |day| %>
+            <tr>
+              <% 52.times do |week| %>
+                <td style="opacity: <%= repo.commit_activity[week]["days"][day] / 80.0 %>"> </td>
+              <% end %>
+            </tr>
+          <% end %>
+        </table>
       </div>
     <% end %>
   </div>
