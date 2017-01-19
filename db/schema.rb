@@ -10,17 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20170119191438) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "alembic_version", primary_key: "version_num", id: :string, limit: 32, force: :cascade do |t|
-  end
-
   create_table "repos", force: :cascade do |t|
-    t.string "name",        limit: 50,  null: false
-    t.string "description", limit: 200
+    t.string "user"
+    t.string "name"
   end
 
 end
