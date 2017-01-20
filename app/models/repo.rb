@@ -6,7 +6,7 @@ class Repo < ApplicationRecord
     dmetaphone: {}
   }
 
-  scope :synced, -> { where("description IS NOT NULL") }
+  scope :synced, -> { where("description IS NOT NULL AND commit_activity IS NOT NULL AND commit_activity != '[]'") }
   scope :by_popularity, -> { order("subscribers_count DESC") }
 
   def github_url
@@ -15,6 +15,10 @@ class Repo < ApplicationRecord
 
   def update_stats
     repo_params = { user: self.user, repo: self.name }
+
+    Github.configure do |c|
+      c.oauth_token = ENV["github_access_token"]
+    end
 
     github_repo     = Github.repos.get(repo_params)
     commit_activity = Github.repos.stats.commit_activity(repo_params)
