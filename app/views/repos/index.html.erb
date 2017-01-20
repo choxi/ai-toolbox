@@ -19,8 +19,10 @@
         <div class="six columns">
           <h1 class="title">AI Toolbox</h1>
           <h6>Search for the most popular open source libraries</h6>
-          <input type="text"></input>
-          <input type="submit" value="Search" class="button-primary"></input>
+          <%= form_tag search_repos_path do %>
+            <%= text_field_tag :query %>
+            <%= submit_tag "Search", class: "button-primary" %>
+          <% end %>
         </div>
       </div>
     </div>
