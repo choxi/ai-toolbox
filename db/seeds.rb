@@ -20,3 +20,5 @@ repos = Repo.create!([
     user: "karpathy"
   }
 ])
+
+Repo.update_stats
