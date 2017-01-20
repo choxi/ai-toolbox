@@ -1,4 +1,11 @@
 class Repo < ApplicationRecord
+  include PgSearch
+  pg_search_scope :search_for, against: %i(name user), using: {
+    tsearch: { prefix: true },
+    trigram: {},
+    dmetaphone: {}
+  }
+
   def update_stats
     github_repo = Github.repos.get({
       user: self.user,

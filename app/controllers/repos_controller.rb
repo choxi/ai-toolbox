@@ -4,7 +4,7 @@ class ReposController < ApplicationController
   end
 
   def search
-    @repos = Repo.all.limit(1)
+    @repos = Repo.search_for(params[:query])
     render :index
   end
 end
