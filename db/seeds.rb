@@ -16,7 +16,7 @@ repos = Repo.create!([
     user: "fchollet"
   },
   {
-    name: "neural-talk",
+    name: "neuraltalk",
     user: "karpathy"
   }
 ])
