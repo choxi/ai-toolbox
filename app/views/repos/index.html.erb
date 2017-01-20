@@ -1,20 +1,27 @@
 <div class="ai-toolbox">
   <div class="hero">
     <div class="container">
-      <div class="row">
+      <div class="row navigation">
         <div class="six columns">
-          <%= link_to "Monk", root_path %>
+          <h1><%= link_to "monk", root_path %></h1>
         </div>
-        <div class="six columns">
-          <%= link_to "Home", root_path %>
-          <%= link_to "Blog", "http://trymonk.com/blog" %>
+        <div class="six columns menu">
+          <div class="u-pull-right">
+            <%= link_to "Home", root_path %>
+            <%= link_to "Blog", "http://trymonk.com/blog" %>
+          </div>
         </div>
       </div>
       <div class="row">
-        <h1>AI Toolbox</h1>
-        <h6>Search for the most popular open source libraries</h6>
-        <input type="text"></input>
-        <input type="submit" value="Search"></input>
+        <div class="six columns">
+          <%= image_tag "Logo - Figure.png", class: "robot" %>
+        </div>
+        <div class="six columns">
+          <h1 class="title">AI Toolbox</h1>
+          <h6>Search for the most popular open source libraries</h6>
+          <input type="text"></input>
+          <input type="submit" value="Search" class="button-primary"></input>
+        </div>
       </div>
     </div>
   </div>
