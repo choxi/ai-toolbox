@@ -3,6 +3,8 @@
 //= require normalize
 //= require skeleton
 
+$text: #636363
+
 .ai-toolbox
   .hero
     color: white
@@ -32,10 +34,10 @@
           margin-left: 10px
 
 .repo
-  color: #636363
+  color: lighten($text, 20)
   padding: 20px 0
   a
-    color: #636363
+    color: $text
     text-decoration: none
   .name
     font-size: 3rem
@@ -53,6 +55,8 @@
       padding: 0 15px 0 0
       border: none
   .commit_activity
+    b
+      color: $text
     table
       table-layout: fixed
       td

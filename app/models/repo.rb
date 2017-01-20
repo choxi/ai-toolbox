@@ -7,6 +7,7 @@ class Repo < ApplicationRecord
   }
 
   scope :synced, -> { where("description IS NOT NULL") }
+  scope :by_popularity, -> { order("subscribers_count DESC") }
 
   def github_url
     "https://github.com/#{self.user}/#{self.name}"
