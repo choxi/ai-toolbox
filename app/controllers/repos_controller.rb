@@ -1,10 +1,10 @@
 class ReposController < ApplicationController
   def index
-    @repos = Repo.all
+    @repos = Repo.synced.all
   end
 
   def search
-    @repos = Repo.search_for(params[:query])
+    @repos = Repo.synced.search_for(params[:query])
     render :index
   end
 end

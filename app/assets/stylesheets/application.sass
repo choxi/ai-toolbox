@@ -3,14 +3,6 @@
 //= require normalize
 //= require skeleton
 
-table.commit_activity
-  table-layout: fixed
-  td
-    width: 10px
-    height: 10px
-    padding: 0
-    background: #2980b9
-
 .ai-toolbox
   .hero
     color: white
@@ -38,3 +30,30 @@ table.commit_activity
           color: white
           text-decoration: none
           margin-left: 10px
+
+.repo
+  color: #636363
+  padding: 20px 0
+  .name
+    font-size: 3rem
+    font-weight: bold
+    margin-bottom: 0
+  .timestamp
+    margin-top: 15px
+    font-style: italic
+    text-transform: lowercase
+    text-align: right
+  p
+    margin-bottom: 0
+  table.stats
+    th, td
+      padding: 0 15px 0 0
+      border: none
+  .commit_activity
+    table
+      table-layout: fixed
+      td
+        width: 10px
+        height: 10px
+        padding: 0
+        background: #2980b9

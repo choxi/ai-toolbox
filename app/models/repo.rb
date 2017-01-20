@@ -6,6 +6,11 @@ class Repo < ApplicationRecord
     dmetaphone: {}
   }
 
+  scope :synced, -> { where("description IS NOT NULL") }
+
+  def github_url
+  end
+
   def update_stats
     repo_params = { user: self.user, repo: self.name }
 
