@@ -65,7 +65,7 @@
                 <% 7.times do |day| %>
                   <tr>
                     <% 52.times do |week| %>
-                      <td style="opacity: <%= repo.commit_activity[week]["days"][day] / 80.0 %>"> </td>
+                      <td style="opacity: <%= repo.commit_activity[week]["days"][day] / 50.0 %>"> </td>
                     <% end %>
                   </tr>
                 <% end %>
