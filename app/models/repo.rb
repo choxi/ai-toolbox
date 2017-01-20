@@ -1,22 +1,21 @@
 class Repo < ApplicationRecord
   include PgSearch
-  pg_search_scope :search_for, against: %i(name user), using: {
+  pg_search_scope :search_for, against: %i(name user description readme), using: {
     tsearch: { prefix: true },
     trigram: {},
     dmetaphone: {}
   }
 
   def update_stats
-    github_repo = Github.repos.get({
-      user: self.user,
-      repo: self.name
-    })
+    repo_params = { user: self.user, repo: self.name }
 
-    commit_activity = Github.repos.stats.commit_activity({
-      user: self.user, repo: self.name
-    })
+    github_repo     = Github.repos.get(repo_params)
+    commit_activity = Github.repos.stats.commit_activity(repo_params)
+    readme          = Base64.decode64(Github.repos.contents.readme(repo_params).content)
 
     self.update_attributes!({
+      description: github_repo.description,
+      readme: readme,
       forks_count: github_repo.forks_count,
       stargazers_count: github_repo.stargazers_count,
       watchers_count: github_repo.watchers_count,
