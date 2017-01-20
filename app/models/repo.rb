@@ -9,6 +9,7 @@ class Repo < ApplicationRecord
   scope :synced, -> { where("description IS NOT NULL") }
 
   def github_url
+    "https://github.com/#{self.user}/#{self.name}"
   end
 
   def update_stats
