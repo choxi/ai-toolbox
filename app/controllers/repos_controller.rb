@@ -7,4 +7,8 @@ class ReposController < ApplicationController
     @repos = Repo.synced.by_popularity.search_for(params[:query])
     render :index
   end
+
+  def new
+    @repo = Repo.new
+  end
 end
