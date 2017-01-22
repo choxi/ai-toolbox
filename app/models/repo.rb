@@ -9,6 +9,9 @@ class Repo < ApplicationRecord
   scope :synced, -> { where("description IS NOT NULL AND commit_activity IS NOT NULL AND commit_activity != '[]'") }
   scope :by_popularity, -> { order("subscribers_count DESC") }
 
+  validates :name, presence: true, uniqueness: { case_sensitive: false, scope: :user }
+  validates :user, presence: true
+
   def github_url
     "https://github.com/#{self.user}/#{self.name}"
   end

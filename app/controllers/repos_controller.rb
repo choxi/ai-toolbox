@@ -20,6 +20,7 @@ class ReposController < ApplicationController
       flash[:success] = "Submitted Repo."
       redirect_to root_path
     else
+      flash.now[:error] = @repo.errors.full_messages.first
       render :new
     end
   end
@@ -27,6 +28,6 @@ class ReposController < ApplicationController
   private
 
   def repo_params
-    params.permit(:user, :name)
+    params.require(:repo).permit(:user, :name)
   end
 end
