@@ -18,6 +18,13 @@
   </head>
 
   <body>
+    <% flash.each do |type, content|%>
+      <div class="flash-<%= type %>">
+        <div class="container">
+          <%= content %>
+        </div>
+      </div>
+    <% end %>
     <%= yield %>
     <script>
       window.intercomSettings = {
