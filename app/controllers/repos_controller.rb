@@ -6,7 +6,7 @@ class ReposController < ApplicationController
 
   def search
     @repos = Repo.synced.by_popularity.search_for(params[:query])
-    render :index
+    render :index, layout: false
   end
 
   def new
