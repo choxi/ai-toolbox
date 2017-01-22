@@ -13,16 +13,19 @@
         </div>
       </div>
       <div class="row">
-        <div class="five columns">
+        <div class="two columns">&nbsp;</div>
+        <div class="three columns">
           <%= image_tag "Logo - Figure.png", class: "robot" %>
         </div>
-        <div class="seven columns">
-          <h2 class="title">AI Toolbox</h2>
-          <h6>Search for the most popular open source AI libraries</h6>
-          <%= form_tag search_repos_path do %>
-            <%= text_field_tag :query %>
-            <%= submit_tag "Search", class: "button-primary" %>
-          <% end %>
+        <div class="five columns">
+          <div class="search">
+            <h2 class="title">AI Toolbox</h2>
+            <h6>Search for the most popular open source AI libraries</h6>
+            <%= form_tag search_repos_path do %>
+              <%= text_field_tag :query %>
+              <%= submit_tag "Search", class: "button-primary" %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
