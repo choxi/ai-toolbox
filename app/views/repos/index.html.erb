@@ -13,12 +13,12 @@
         </div>
       </div>
       <div class="row">
-        <div class="six columns">
+        <div class="five columns">
           <%= image_tag "Logo - Figure.png", class: "robot" %>
         </div>
-        <div class="six columns">
-          <h1 class="title">AI Toolbox</h1>
-          <h6>Search for the most popular open source libraries</h6>
+        <div class="seven columns">
+          <h2 class="title">AI Toolbox</h2>
+          <h6>Search for the most popular open source AI libraries</h6>
           <%= form_tag search_repos_path do %>
             <%= text_field_tag :query %>
             <%= submit_tag "Search", class: "button-primary" %>
