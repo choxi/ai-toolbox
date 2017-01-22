@@ -1,1 +1,9 @@
-<h1>Submit a Repo</h1>
+<div class="container new-repo">
+  <h4>submit a repo</h4>
+  <%= form_for @repo do |form| %>
+    https://github.com/
+    <%= form.text_field :user, placeholder: "fchollet" %> / <%= form.text_field :name, placeholder: "keras"  %>
+    <br />
+    <%= form.submit "Submit", class: "button-primary" %>
+  <% end %>
+</div>
