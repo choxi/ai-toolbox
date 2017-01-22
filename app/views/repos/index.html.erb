@@ -2,13 +2,7 @@
 <html>
   <%= render "layouts/head" %>
   <body>
-    <% flash.each do |type, content|%>
-      <div class="flash-<%= type %>">
-        <div class="container">
-          <%= content %>
-        </div>
-      </div>
-    <% end %>
+    <%= render "layouts/flash" %>
 
     <div class="ai-toolbox">
       <div class="hero">
