@@ -2,7 +2,6 @@
 
 TODO:
 
-- Fix robot arm
 - Intercom
 
 ---
@@ -10,3 +9,4 @@ TODO:
 - Fix mobile issues
 - Add language
 - Add stars to background
+- Add Footer
