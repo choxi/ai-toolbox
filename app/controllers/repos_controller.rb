@@ -1,6 +1,7 @@
 class ReposController < ApplicationController
   def index
     @repos = Repo.synced.by_popularity.all
+    render :index, layout: false
   end
 
   def search
